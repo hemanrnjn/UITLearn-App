@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@drawable/back2"
+    tools:context=".UserActivity">
+
+    <!--<ImageView
+        android:layout_width="800sp"
+        android:layout_height="200sp"
+        android:background="@drawable/back"/>-->
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:entries="@array/semester"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:popupBackground="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:text="SEMESTER"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinner"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2"
+        android:layout_marginBottom="5sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:text="GO!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:id="@+id/btnsem"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"/>
+
+    <TextView
+        android:text="WELCOME"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textStyle="normal|bold"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:textColor="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:textSize="24sp"
+        android:textColor="@android:color/holo_green_light"
+        android:id="@+id/tvUser"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="UIT Learn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:id="@+id/tvBranch"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUser"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:text="CHOOSE YOUR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textSize="18sp"
+        android:textColor="?attr/colorAccent"
+        android:textStyle="normal|bold"
+        android:layout_marginBottom="13dp"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2">
+
+
+    <EditText
+        android:id="@+id/signup_input_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="First Name"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <EditText
+        android:id="@+id/signup_input_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Last Name"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Branch : "
+        android:textSize="17sp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginLeft="5sp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:entries="@array/branch_names"
+        android:textAlignment="center"
+        style="@style/customtheme"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp" />
+
+
+    <EditText
+        android:id="@+id/signup_input_enrollment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_enrollment"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_dark" />
+
+
+
+    <EditText
+        android:id="@+id/signup_input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <EditText
+        android:id="@+id/signup_input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/hint_password"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <Button android:id="@+id/btn_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_sign_up"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/white"/>
+    <Button android:id="@+id/btn_link_login"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_link_login"
+                android:background="@null"
+                android:layout_marginTop="3dp"
+                android:textColor="@android:color/holo_blue_dark"/>
+
+</LinearLayout>

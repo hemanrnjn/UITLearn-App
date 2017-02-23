@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Final</string>
+    <string name="hint_enrollment">Enrollment No.</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_gender">I am</string>
+    <string name="hint_email">Email ID</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_link_signup">Register Here!</string>
+    <string name="btn_link_login">Log In Here!</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Please enter a Name</string>
+    <string name="err_msg_required">Valid Input Required</string>
+    <string name="err_msg_email">Please enter a Valid Email</string>
+    <string name="err_msg_password">Enter a Password</string>
+
+    <string-array name="branch_names">
+        <item>CSE</item>
+        <item>IT</item>
+        <item>EEE</item>
+        <item>ECE</item>
+        <item>ME</item>
+        <item>AU</item>
+        <item>CE</item>
+        <item>PCT</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>1st Semester</item>
+        <item>2nd Semester</item>
+        <item>3rd Semester</item>
+        <item>4th Semester</item>
+        <item>5th Semester</item>
+        <item>6th Semester</item>
+        <item>7th Semester</item>
+        <item>8th Semester</item>
+    </string-array>
+
+</resources>
