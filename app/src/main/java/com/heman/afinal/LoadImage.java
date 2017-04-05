@@ -27,7 +27,7 @@ public class LoadImage extends AppCompatActivity {
 //Loading image from below url into imageView
 
         Picasso.with(this)
-                .load("http://192.168.43.172/FinalProject/images/back.jpg")
+                .load("http://192.168.43.172/FinalProject/images/1styear/bce2014a.jpg")
                 .into(imageView);
 
         photoViewAttacher = new PhotoViewAttacher(imageView);
@@ -35,7 +35,7 @@ public class LoadImage extends AppCompatActivity {
         photoViewAttacher.update();
 
         Picasso.with(this)
-                .load("http://192.168.43.172/FinalProject/images/back.jpg")
+                .load("http://192.168.43.172/FinalProject/images/1styear/bce2014b.jpg")
                 .into(imageView2);
 
         photoViewAttacher = new PhotoViewAttacher(imageView2);

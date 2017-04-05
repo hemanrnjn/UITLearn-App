@@ -1,6 +1,7 @@
 package com.heman.afinal;
 
 import android.app.ProgressDialog;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,11 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginInputEmail, loginInputPassword;
     private Button btnlogin;
     private Button btnLinkSignup;
+    // Alert Dialog Manager
+    AlertDialogManager alert = new AlertDialogManager();
+
+    // Session Manager Class
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         // Progress dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
+
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +65,34 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+
+    private Boolean exit = false;
+    @Override
+    public void onBackPressed() {
+        if (exit) {
+            finish(); // finish activity
+        } else {
+            Toast.makeText(this, "Press Back again to Exit",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
+        }
+
+    }
+
+
     private void loginUser( final String email, final String password) {
         // Tag used to cancel the request
+
+        // Session Manager
+        session = new SessionManager(getApplicationContext());
+
         String cancel_req_tag = "login";
         progressDialog.setMessage("Logging you in...");
         showDialog();
@@ -77,13 +110,24 @@ public class LoginActivity extends AppCompatActivity {
                     if (!error) {
                         String user = jObj.getJSONObject("user").getString("first_name");
                         String branch = jObj.getJSONObject("user").getString("branch");
+                        String email = jObj.getJSONObject("user").getString("email");
                         // Launch User activity
-                        Intent intent = new Intent(
+                        /*Intent intent = new Intent(
                                 LoginActivity.this,
                                 UserActivity.class);
                         intent.putExtra("user", user);
                         intent.putExtra("branch", branch);
                         startActivity(intent);
+                        finish();*/
+                        session.createLoginSession(user, email, branch);
+                        Intent launchNextActivity;
+                        launchNextActivity = new Intent(LoginActivity.this, UserActivity.class);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        launchNextActivity.putExtra("user", user);
+                        launchNextActivity.putExtra("branch", branch);
+                        startActivity(launchNextActivity);
                         finish();
                     } else {
 

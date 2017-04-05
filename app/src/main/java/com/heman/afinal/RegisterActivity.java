@@ -89,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 Intent i = new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }
@@ -129,10 +130,17 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
 
                         // Launch login activity
-                        Intent intent = new Intent(
+                        /*Intent intent = new Intent(
                                 RegisterActivity.this,
                                 LoginActivity.class);
                         startActivity(intent);
+                        finish();*/
+                        Intent launchNextActivity;
+                        launchNextActivity = new Intent(RegisterActivity.this, LoginActivity.class);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(launchNextActivity);
                         finish();
                     } else {
 

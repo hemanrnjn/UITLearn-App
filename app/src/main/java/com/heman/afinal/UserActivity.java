@@ -3,6 +3,7 @@ package com.heman.afinal;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Himanshu on 19-02-2017.
@@ -21,6 +23,8 @@ public class UserActivity extends AppCompatActivity {
     public static String item="";
     private Button btnsem;
     String branchName = "";
+
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,18 @@ public class UserActivity extends AppCompatActivity {
 
         TextView tvBranch = (TextView) findViewById(R.id.tvBranch);
         TextView tvUser = (TextView) findViewById(R.id.tvUser);
+        TextView tvLogout = (TextView) findViewById(R.id.tvLogout);
         btnsem = (Button) findViewById(R.id.btnsem);
+
+        session = new SessionManager(getApplicationContext());
+
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                session.logoutUser();
+                finish();
+            }
+        });
 
         // Display user details
         tvUser.setText(username.toUpperCase());
@@ -104,4 +119,27 @@ public class UserActivity extends AppCompatActivity {
         });
 
     }
+
+
+    private Boolean exit = false;
+    @Override
+    public void onBackPressed() {
+        if (exit) {
+            finish(); // finish activity
+        } else {
+            Toast.makeText(this, "Press Back again to Exit",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
+        }
+
+    }
+
+
 }
